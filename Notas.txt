@@ -1,0 +1,165 @@
+------------------ Interface (implements)
+
+Contrato de funções não implementadas.
+Não se pode criar uma classe dessa, apenas implementá-la.
+
+------------------ Abstract (extends) - Funções implementado
+
+Contrato de funções implementadas.
+Não se pode criar uma classe dessa, apenas extendê-la.
+
+Subclasses de interfaces implementam algo.
+Subclasses de abstracs especificam algo.
+
+
+###############################################################
+
+
+
+------------------ 1. Single Responsibility Principle
+
+- Resumo:
+	Cada classe deve ter sua responsabilidade.
+	Cada classe deve ter apenas uma razão para ser alterada.
+
+- Exemplo:
+	No sisterma do Karaoke, separar classes que são responsaveis por: ler a legenda, ler o tempo da legenda, player de legenda, player de gravações.
+	E uma classe foi tida como main, sendo uma FSM (Final State Machine).
+
+- Benefícios:
+	Facilita manutenção e reusabilidade já que modula mais o código.
+
+
+
+
+------------------ 2.Open Closed Principle (Interface)
+
+- Resumo:
+	Uma classe deve ser aberta para extenção e fechada para modificações.
+	Uso de classes abstratas e factory quando haverão mudanças futuras que necessitaram de variações de uma mesma classe.
+	Aplicar esse principio somente se for necessário, pois desfazer essa implementação no futuro pode ser problematico.
+
+- Exemplo:
+	No sistema do Karaoke, as classes de ler a legenda, ler o tempo da legenda foram transformadas em interface e suas respectivas factories foram criadas, e para cada formato de legenda e de tempo uma nova classe (implementação da 	interface) foi criada.
+
+- Benefícios:
+	Facilita manutenção e a adição de novas funcionalidade, necessitand   implementar uma nova classe dependente da classe abstrata e alterar a classe factory.
+
+
+
+
+------------------ 3. Liskov Substitution Principle (Abstract)
+
+Mais gerais __________________________________________________________ Mais específicos
+				A 	<---	subA
+	argSupA 	<---	argA 	<--- 	argsSubA
+
+	- Definições inicias:
+		Onde se espera uma classe A, qualquer classe filha, neta... dessa classe pode ser aceita.
+		SubType de uma classe seria uma subA que atende as 7 regras do LSP em relação a A, ou seja, são subA que conseguem substituir A.
+		Clientes é como se define usuários das funções sendo discutidas, funções que devems eguir os principios SOLID.
+		A <---- subA, significa que subA implementa a interface ou abstract A
+		A <____ B, significa que B tem uma propriedade do tipo A
+		O curso sempre coloca como uma classe A realizar uma classe B sendo como A implementar uma interface B ou extender um abstract B ou uma classe regular B.
+		O curso sempre coloca como uma classe A depender de outra classe B como uma das propriedades da classe A ser B. 
+		No curso o (A) no UML significa uma classe abstrata que pode ser uma classe regular a ser extendida, um abstract a ser extendido, ou mais comumente uma interface a ser implementada.
+
+	- Resumo:
+		Em todo lugar que se usa a classe A devê-se poder também usar subA também.
+		Existem 7 regras a serem seguidas, as 5 primeiras são em relação aos métodos e as outras 2 em relação á classe.
+
+1. Argumentos:
+	Uma subclasse subA, em seus métodos, deve esperar a mesma quantidade e tipagem dos parametros dos métodos da superclasse A.
+	Os parametros dos métodos de subA podem ser iguais ou superclasses dos parâmetros de dos métodos de A, porém não subclasses deles. 
+
+	- Resumo regra: 
+		Não se deixa os parametros dos métodos mais especificos, porém eles podem ser iguais ou mais gerais.
+		Linguagens tipadas tomam conta disso.
+		Cliente envia x, subA deve-se esperar um envio de x ou ascendentes dele.	
+
+	- Exemplo:
+		(Pode usar) Se o método de subA espera parametros argSupA ele ele vai estar apto a lidar com o tipo argA que le é enviado, alcançando o principio de substicuição.
+		(Pode usar) Se o método de subA espera parametros argA ele vai estar apto a lidar com o tipo argA que le é enviado, alcançando o principio de substicuição.
+		(Não pode usar) Se o método de subA espera parametros argsSubA ele NÃO vai estar apto a lidar com o tipo argSupA e argsSubA também.
+
+2.  Retornos:
+	Uma subclasse subA, em seus métodos, deve possuir a mesma tipagem de retorno dos métodos da superclasse A.
+	O retorno dos métodos de subA podem ser iguais ou subclasses do retorno dos métodos de A, porém não superclasses deles. 
+
+	- Resumo regra: 
+		Não se deixa os retornos dos métodos mais gerais, porém pode deixá-los iguais ou mais específicos.
+		Linguagens tipadas tomam conta disso.
+		Cliente espera retorno de x, deve-se enviar um retorno de x ou descendentes dele.
+
+	- Exemplo:
+		(Pode usar) Se o método de subA retorna o tipo argsSubA ele vai estar apto a atender quem o chamou, que espera um tipo argA, alcançando o principio de substicuição.
+		(Pode usar) Se o método de subA retorna o tipo argA ele vai estar apto a atender quem o chamou, que espera um tipo argA, alcançando o principio de substicuição.
+		(Não pode usar) Se o método de subA retorna o tipo argSupA ele não vai estar apto a atender quem o chamou, que espera um tipo argA.
+
+3. Exceções:
+	Toda exceção de subA deve já estar presente em A, assim o cliente, que já sabe lidar com A, quando se conectar a subA, saberá lidar com todas as exceptions de presentes em subA.
+
+	- Resumo regra: 
+		Subclasses não geram novos tipos de exceções, porém podem gerar tipos iguais ou descendentes dos tipos gerados em A.
+
+	- Exemplo:
+		(Pode usar) Se o método de subA tem uma exceção ela deve ser igual a uma das exceçoes contidas em A ou descendente de uma delas, para que o cliente que saiba se conectar com SubA se conecte com A também.
+
+4. Pre-condition (argumentos):
+
+	- Resumo regra: 
+		As pré-condições de subA não podem ser mais fortes que as de A.
+
+	- Exemplo:
+		(Não pode usar) Se subA pode receber um argumento somente non-null (mais restrito) e A pode receber nullable, isso significa que quando o cliente se conectar em subA, um argumento null geraria um erro pois subA não o 		espera.
+
+5. Pos-condition (retornos):
+
+- Resumo regra: 
+	As pos-condições de subA não podem ser mais fracas que as de A.
+
+	- Exemplo:
+		(Não pode usar) Se subA pode retornar um argumento nullable (mais fraco) e A somente retorna non-null, isso significa que quando o cliente se conectar em subA, um argumento null geraria um erro pois o cliente não espera 		esse tipo de retorno.
+
+6. Invariancia da classe:
+ 	É uma afirmação de uma classe que deve ser sempre verdadeira.
+
+	- Exemplo:
+		A classe A Square tem a invariancia de que a altura deve ser igual a largura e a classe subA Rectangle não.
+		É possível ao setar altura que a largura seja setada tambem, resolvendo esse problema, porém quebrando a regra 7. Nesse caso essas regras são mutualmente exclusivas, ou seja, esse principio não pode ser seguido, pelo 		menos não com esses métodos.
+
+7. Constancia da classe:
+	Descreve como uma propriedade da classe evolui com o tempo.
+	
+	- Exemplo:
+		A classe A Square tem a constancia de que ao setar a altura a largura deve ser setada tambem, e vice e versa, e a subA Rectangle não.
+		É possível que a mudança de altura e largura sejam independentes, porém quebraria a regra 6. Nesse caso essas regras são mutualmente exclusivas, ou seja, esse principio não pode ser seguido, pelo menos não com esses 		métodos.
+	
+	- Benefícios:
+		Possibilidade de substituir qualquer classe A por uma fr duas sub classes subA.
+
+
+------------------ 4. Interface Segregation Principle (Interface)
+
+- Resumo:
+	Clientes não devem ser forçados a depender de métodos que não usa.
+
+- Exemplo:
+	Deve ser criada uma interface somente com os métodos que o cliente necessita, o cliente se conectar com a interface, ou seja, ter a interface como um de seus parametros, porém ainda sim receber um objeto que implemente a 		interface, assim tendo acesso somente as funções descritas na interface que espera, mesmo que o objeto que lhe foi entregue tenha a implementação de outras funções.
+	Ao adicionaruma nova função que será usada por um novo cliente é necessário implementar ela no serviço e criar uma interface com as funçoes implementadas que serão usadas pelo cliente. O cliente devera ter um apropriedade do tipo 	na nova interface criada.
+
+- Benefícios:
+	Classes tendo acesso somente a conjuntos de métodos que usam deixa o código mais limpo e facilita manutenção. Limitando o que o cliente tem acesso é possivel entender melhor o que está acontecendo, o que o cliente pode e não 	pode fazer.
+
+
+------------------ 5. Dependency Inversion Principle (Interface)
+
+- Resumo:
+	OCP implementa DIP. Uma estrutura de classes possue uma hierarquia onde a FSM depende de outras classes e essas classes dependem de outras classes. 
+	Se uma dessas classes, A por exemplo, for transformada em uma interface supA, a classe que dependida de (tinha uma propriedade) A agora ira depender de supA, e por sua vez, a implementação de supA, A, realizara supA, assim 		protegendo.
+- Exemplo:
+	Se um Time A tem um codigo que depende de um outro codigo de um Time B, o time A pode criar abstrações (abstracts ou interfaces) que serão realizadas pelo Time B, evitando surpresas para o time A. E invertendo a dependencia, 	agora sendom o Time B que depende do time A, nessa conexão em especifico ao menos. No fluxo geral do programa o Time A continua dependendo do Time B. O Time A pode continuar desenvolvendo, independente do cronograma do time B, 	pois já sabem quais são os contratos das funções que serão implementadas por eles. Facilita a integração.
+	
+- Benefícios:
+	Protege o cliente das mudanças (OCP).
+	

@@ -1,0 +1,16 @@
+C:\Users\Denis\Desktop\ServiceClient\obj\Debug\net5.0\ServiceClient.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Denis\Desktop\ServiceClient\obj\Debug\net5.0\ServiceClient.AssemblyInfoInputs.cache
+C:\Users\Denis\Desktop\ServiceClient\obj\Debug\net5.0\ServiceClient.AssemblyInfo.cs
+C:\Users\Denis\Desktop\ServiceClient\obj\Debug\net5.0\ServiceClient.csproj.CoreCompileInputs.cache
+C:\Users\Denis\Desktop\ServiceClient\bin\Debug\net5.0\ServiceClient.exe
+C:\Users\Denis\Desktop\ServiceClient\bin\Debug\net5.0\ServiceClient.deps.json
+C:\Users\Denis\Desktop\ServiceClient\bin\Debug\net5.0\ServiceClient.runtimeconfig.json
+C:\Users\Denis\Desktop\ServiceClient\bin\Debug\net5.0\ServiceClient.runtimeconfig.dev.json
+C:\Users\Denis\Desktop\ServiceClient\bin\Debug\net5.0\ServiceClient.dll
+C:\Users\Denis\Desktop\ServiceClient\bin\Debug\net5.0\ref\ServiceClient.dll
+C:\Users\Denis\Desktop\ServiceClient\bin\Debug\net5.0\ServiceClient.pdb
+C:\Users\Denis\Desktop\ServiceClient\obj\Debug\net5.0\ServiceClient.csprojAssemblyReference.cache
+C:\Users\Denis\Desktop\ServiceClient\obj\Debug\net5.0\ServiceClient.dll
+C:\Users\Denis\Desktop\ServiceClient\obj\Debug\net5.0\ref\ServiceClient.dll
+C:\Users\Denis\Desktop\ServiceClient\obj\Debug\net5.0\ServiceClient.pdb
+C:\Users\Denis\Desktop\ServiceClient\obj\Debug\net5.0\ServiceClient.genruntimeconfig.cache

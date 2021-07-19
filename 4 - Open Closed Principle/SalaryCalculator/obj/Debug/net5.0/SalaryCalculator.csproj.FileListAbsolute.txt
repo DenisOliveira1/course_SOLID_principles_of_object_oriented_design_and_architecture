@@ -1,0 +1,16 @@
+C:\Users\Denis\Desktop\SalaryCalculator\obj\Debug\net5.0\SalaryCalculator.csprojAssemblyReference.cache
+C:\Users\Denis\Desktop\SalaryCalculator\obj\Debug\net5.0\SalaryCalculator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Denis\Desktop\SalaryCalculator\obj\Debug\net5.0\SalaryCalculator.AssemblyInfoInputs.cache
+C:\Users\Denis\Desktop\SalaryCalculator\obj\Debug\net5.0\SalaryCalculator.AssemblyInfo.cs
+C:\Users\Denis\Desktop\SalaryCalculator\obj\Debug\net5.0\SalaryCalculator.csproj.CoreCompileInputs.cache
+C:\Users\Denis\Desktop\SalaryCalculator\bin\Debug\net5.0\SalaryCalculator.exe
+C:\Users\Denis\Desktop\SalaryCalculator\bin\Debug\net5.0\SalaryCalculator.deps.json
+C:\Users\Denis\Desktop\SalaryCalculator\bin\Debug\net5.0\SalaryCalculator.runtimeconfig.json
+C:\Users\Denis\Desktop\SalaryCalculator\bin\Debug\net5.0\SalaryCalculator.runtimeconfig.dev.json
+C:\Users\Denis\Desktop\SalaryCalculator\bin\Debug\net5.0\SalaryCalculator.dll
+C:\Users\Denis\Desktop\SalaryCalculator\bin\Debug\net5.0\ref\SalaryCalculator.dll
+C:\Users\Denis\Desktop\SalaryCalculator\bin\Debug\net5.0\SalaryCalculator.pdb
+C:\Users\Denis\Desktop\SalaryCalculator\obj\Debug\net5.0\SalaryCalculator.dll
+C:\Users\Denis\Desktop\SalaryCalculator\obj\Debug\net5.0\ref\SalaryCalculator.dll
+C:\Users\Denis\Desktop\SalaryCalculator\obj\Debug\net5.0\SalaryCalculator.pdb
+C:\Users\Denis\Desktop\SalaryCalculator\obj\Debug\net5.0\SalaryCalculator.genruntimeconfig.cache
